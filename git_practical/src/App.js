@@ -13,6 +13,11 @@ function App() {
   setResult(sum);
 }
 
+const sub = (e) => {
+  e.preventDefault(); 
+  const result = Number(num1) - Number(num2);
+  setResult(result);
+}
   return (
     <> 
     <form>
@@ -21,6 +26,12 @@ function App() {
 
       <button onClick={add}>Add</button>
       <h1>Addition is {result}</h1>
+
+      <input type="number"  value={num1} onChange={(e)=>setNum1(e.target.value)}></input>
+      <input type="number"  value={num2} onChange={(e)=>setNum2(e.target.value)}></input>
+
+      <button onClick={sub}>Sub</button>
+      <h1>Subraction is {result}</h1>
     </form>
     </>
   );
